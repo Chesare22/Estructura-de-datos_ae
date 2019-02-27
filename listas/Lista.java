@@ -37,25 +37,23 @@ public abstract class Lista {
     public int size(){
       int s = 0;
       Nodo soporte = inicio;
-      if(inicio == null){
-        return s;
-      }
-      do{
+      while(soporte != null){
         s++;
         soporte = soporte.getSiguiente();
-      }while(soporte != null);
+      }
       return s;
     }
 
+    //Nota: Esto funciona bajo criterios ambiguos
     public Object[] toArray(){
       Object[] data = new Object[this.size()];
-      Nodo actual = inicio;
+      Nodo soporte = inicio;
       int i = 0;
-      do{
-        data[i] = actual.getDato();
+      while(soporte != null){
+        data[i] = soporte.getDato();
         i++;
-        actual = actual.getSiguiente();
-      }while(actual != null);
+        soporte = soporte.getSiguiente();
+      }
       return data;
     }
 

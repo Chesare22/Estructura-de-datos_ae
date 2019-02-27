@@ -11,24 +11,34 @@ package listas;
 public abstract class ListaD extends Lista{
  protected NodoDoble inicio;
  protected NodoDoble ultimo;
- 
+
  public boolean vacio(){
  return inicio == null;
- } 
- 
+ }
+
  public void imprimir(){
  super.setInicio(inicio);
  super.imprimir();
  }
- 
+
+ public int size(){
+   super.setInicio(inicio);
+   return super.size();
+ }
+
+ public Object[] toArray(){
+   super.setInicio(inicio);
+   return super.toArray();
+ }
+
  public void imprimirAlReves(){
  NodoDoble actual = ultimo;
  while(actual != null){
      System.out.print(actual.getDato()+ "->");
      actual = actual.getAnterior();
  }
- 
+
  }
- 
- 
+
+
 }

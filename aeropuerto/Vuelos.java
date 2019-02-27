@@ -84,22 +84,38 @@ public class Vuelos{
     }
   }
 
-  public static void main(String[] args) {
-    Vuelos s = new Vuelos(10);
-    s.imprimirVuelos();
-    System.out.println("");
-    System.out.println(s.sacarSiguienteVuelo());
-    s.imprimirVuelos();
-    System.out.println("\n");
-    Object[] vuelos = s.obtenerVuelos();
-    for(int i = 0;i<vuelos.length;i++){
-      System.out.println(vuelos[i]);
+  public static void imprimirArray(Object[] ar){
+    for(int i = 0;i<ar.length-1;i++){
+      System.out.print(String.valueOf(ar[i]).concat(", "));
     }
+    System.out.println(ar[ar.length-1]);
+  }
+
+  public static void main(String[] args) {
+    Vuelos s = new Vuelos(15);
+    imprimirArray(s.obtenerVuelos());
+
+    System.out.println(s.sacarSiguienteVuelo());
+
+    imprimirArray(s.obtenerVuelos());
     System.out.println("Que elemento desea sacar?");
     Scanner teclado = new Scanner(System.in);
     int vuelo = teclado.nextInt();
     s.eliminarVueloEspecifico(vuelo);
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
     s.imprimirVuelos();
+    System.out.println("");
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
+    imprimirArray(s.obtenerVuelos());
+
+    s.imprimirVuelos();
+
     //Nota: este experimento nos demuestra que los vuelos se guardan como enteros, no como Strings
   }
 }
