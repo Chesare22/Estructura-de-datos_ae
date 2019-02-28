@@ -6,7 +6,7 @@ import estructuras.EmptyStructureException;
 
 import java.lang.RuntimeException;
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Vuelos{
   private Deque vuelos;
@@ -20,7 +20,7 @@ public class Vuelos{
     this.introducirVuelos(numeroDeVuelos);
   }
 
-  public void introducirVuelos(int numeroDeVuelos) throws RuntimeException{
+  public void introducirVuelos(int numeroDeVuelos){
     int[] vuelosID = generarVuelosAleatoriosSinRepeticion(0,numeroDeVuelos*50, numeroDeVuelos);
     for(int i = 0; i<numeroDeVuelos;i++){
       vuelos.insertFirst(vuelosID[i]);
@@ -57,14 +57,17 @@ public class Vuelos{
     }
     return elementos;
   }
-  public void imprimirVuelos(){
+/*  public void imprimirVuelos(){
     vuelos.imprimir();
-  }
+  }*/
   public Object sacarSiguienteVuelo(){
     return vuelos.removeLast();
   }
   public Object[] obtenerVuelos(){
     return vuelos.toArray();
+  }
+  public boolean isEmpty(){
+    return vuelos.isEmpty();
   }
 
   //Si no se encuentra el vuelo, no hace nada
@@ -83,7 +86,7 @@ public class Vuelos{
       vuelos.insertFirst(respaldoDeVuelos.pop());
     }
   }
-
+/*
   public static void imprimirArray(Object[] ar){
     for(int i = 0;i<ar.length-1;i++){
       System.out.print(String.valueOf(ar[i]).concat(", "));
@@ -117,5 +120,5 @@ public class Vuelos{
     s.imprimirVuelos();
 
     //Nota: este experimento nos demuestra que los vuelos se guardan como enteros, no como Strings
-  }
+  }*/
 }
