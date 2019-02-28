@@ -1,3 +1,3 @@
 # Estructura-de-datos_aeropuerto
 
-El archivo .bat que sirve para mostrar la interfaz gráfica es EjecutarProyecto.
+Para ejecutar el proyecto, hay que ejecutar el archivo EjecutarProyecto.bat
